@@ -1,5 +1,5 @@
-import 'package:chatbot/screens/login.dart';
-import 'package:chatbot/screens/signup.dart';
+import 'package:vendbot/screens/login.dart';
+import 'package:vendbot/screens/signup.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatefulWidget {
