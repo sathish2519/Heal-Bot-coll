@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428077346777",
+    "project_id": "vendbot-f63ca",
+    "storage_bucket": "vendbot-f63ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428077346777:android:e794b4cb56d567c9d633c8",
+        "android_client_info": {
+          "package_name": "com.example.vendbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428077346777-277iiamrte0llujnuslfecc0vp56lpg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBskFx1cLCDQuuWyb14RLsEuEAMibz0Vz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428077346777-277iiamrte0llujnuslfecc0vp56lpg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
