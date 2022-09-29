@@ -3,7 +3,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vendbot/auth.dart';
+import 'package:vendbot/screens/forgotpassword.dart';
 import 'package:vendbot/screens/landing_screen.dart';
+import 'package:vendbot/screens/login.dart';
+
+import 'auth.dart';
 
 class Boardingscreen extends StatefulWidget {
   const Boardingscreen({Key? key}) : super(key: key);
@@ -19,10 +24,8 @@ class _BoardingscreenState extends State<Boardingscreen> {
   @override
   Widget build(BuildContext context) {
     //to stop landscape mode
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown
-    ]);
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white70,
@@ -32,7 +35,7 @@ class _BoardingscreenState extends State<Boardingscreen> {
           //     color: Colors.blue[600],
           //     size: 40.0,
           //   ),
-          Text(
+          const Text(
             "H",
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -172,22 +175,39 @@ class _BoardingscreenState extends State<Boardingscreen> {
                 scroller == 2
                     ? Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.blue)),
-                            onPressed: () {
-                              Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LandingPage()),
-                                (Route<dynamic> route) => false,
-                              );
-                            },
-                            child: const Text('Lets GO')),
+                        // child: ElevatedButton(
+                        //     style: ButtonStyle(
+                        //         backgroundColor:
+                        //             MaterialStateProperty.all(Colors.blue)),
+                        //     onPressed: () {
+                        //       Navigator.pushAndRemoveUntil(
+                        //         context,
+                        //         MaterialPageRoute(
+                        //             builder: (context) => LoginWidget(
+                        //                   onClickedSignUp: () {},
+                        //                 )),
+                        //         (Route<dynamic> route) => false,
+                        //       );
+                        //     },
+                        //     child: const Text('Lets GO')),
+                        child: GestureDetector(
+                          child: Text(
+                            'LETS GO',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              decoration: TextDecoration.underline,
+                              fontSize: 20,
+                            ),
+                          ),
+                          onTap: () =>
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => LoginWidget(
+                                        onClickedSignUp: () {},
+                                      ))),
+                        ),
                       )
                     : TextButton(
-                        child: Text(
+                        child: const Text(
                           "Next",
                           style: TextStyle(fontSize: 20, color: Colors.grey),
                         ),
